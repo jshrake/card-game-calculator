@@ -26,6 +26,8 @@
       )
     );
   }
+
+  const spinnerSpeed = 0.1;
 </script>
 
 <!--
@@ -54,6 +56,7 @@ Input Component
       type="number"
       inputmode="numeric"
       name="deck_size"
+      speed={spinnerSpeed}
       min="0"
       bind:value={params.deck_size}
     />
@@ -68,6 +71,7 @@ Input Component
       type="number"
       inputmode="numeric"
       name="deck_success_count"
+      speed={spinnerSpeed}
       min="0"
       max={params.deck_size}
       bind:value={params.deck_success_count}
@@ -83,6 +87,7 @@ Input Component
       type="number"
       inputmode="numeric"
       name="draw_count"
+      speed={spinnerSpeed}
       min="0"
       max={params.deck_size}
       bind:value={params.draw_count}
@@ -98,6 +103,7 @@ Input Component
       type="number"
       inputmode="numeric"
       name="desired_success_count"
+      speed={spinnerSpeed}
       min="0"
       max={params.draw_count}
       bind:value={params.desired_success_count}
