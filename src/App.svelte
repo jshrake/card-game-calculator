@@ -9,6 +9,59 @@
     draw_count: 4,
     desired_success_count: 2,
   };
+
+  const HG_N = "N";
+  const HG_K = "K";
+  const HG_n = "n";
+  const HG_x = "k";
+
+  /**
+   * Sets the hypergeometric parameters based on the URL parameters.
+   */
+  const set_hyper_params_from_url_params = (url_params: URLSearchParams) => {
+    params.deck_size = parseInt(url_params.get(HG_N)) || params.deck_size;
+    params.deck_success_count =
+      parseInt(url_params.get(HG_K)) || params.deck_success_count;
+    params.draw_count = parseInt(url_params.get(HG_n)) || params.draw_count;
+    params.desired_success_count =
+      parseInt(url_params.get(HG_x)) || params.desired_success_count;
+    params = params;
+  };
+
+  /**
+   *
+   * Sets the URL parameters using window.history.replaceState
+   * based on the current hypergeometric parameters.
+   *
+   * @param params: Hypergeometric parameters to set in the URL
+   */
+  const set_url_params_from_hyper_params = (params: HypergeometricParams) => {
+    if (!window.location.pathname) {
+      return;
+    }
+    const url_params = new URLSearchParams();
+    url_params.set(HG_N, params.deck_size.toString());
+    url_params.set(HG_K, params.deck_success_count.toString());
+    url_params.set(HG_n, params.draw_count.toString());
+    url_params.set(HG_x, params.desired_success_count.toString());
+    // Ignore any errors that might occur when setting the URL
+    try {
+      window.history.replaceState(
+        {},
+        "",
+        `${window.location.pathname}?${url_params.toString()}`
+      );
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  // Set the hypergeometric parameters the very first time the page is loaded
+  const url_params = new URLSearchParams(window.location.search);
+  set_hyper_params_from_url_params(url_params);
+  // And set the URL parameters based on the hypergeometric parameters the first time the page is loaded
+  // This handles the case that the user has no URL parameters set
+  set_url_params_from_hyper_params(params);
 </script>
 
 <main>
@@ -31,7 +84,13 @@
   </div>
   <div class="card">
     <div class="input-container">
-      <Input bind:params />
+      <Input
+        bind:params
+        onEditDragEnd={(_) => {
+          // Keep the URL parameters updated whenever the hypergeometric parameters change
+          set_url_params_from_hyper_params(params);
+        }}
+      />
     </div>
     <div class="output-container">
       <Output {params} />

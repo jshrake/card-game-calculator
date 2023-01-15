@@ -5,6 +5,8 @@
   /** Input parameters for the hypergeometric distribution calculation*/
   export let params: HypergeometricParameters;
 
+  export let onEditDragEnd = (event: any) => {};
+
   // Restrict input values to be within the bounds of the other inputs
   $: {
     // deck_success_count must be less than or equal to the number of cards in the deck
@@ -58,6 +60,8 @@ Input Component
       name="deck_size"
       speed={spinnerSpeed}
       min="0"
+      on:editend={onEditDragEnd}
+      on:dragend={onEditDragEnd}
       bind:value={params.deck_size}
     />
   </div>
@@ -74,6 +78,8 @@ Input Component
       speed={spinnerSpeed}
       min="0"
       max={params.deck_size}
+      on:editend={onEditDragEnd}
+      on:dragend={onEditDragEnd}
       bind:value={params.deck_success_count}
     />
   </div>
@@ -90,6 +96,8 @@ Input Component
       speed={spinnerSpeed}
       min="0"
       max={params.deck_size}
+      on:editend={onEditDragEnd}
+      on:dragend={onEditDragEnd}
       bind:value={params.draw_count}
     />
   </div>
@@ -105,7 +113,9 @@ Input Component
       name="desired_success_count"
       speed={spinnerSpeed}
       min="0"
-      max={params.draw_count}
+      max={Math.min(params.deck_success_count, params.draw_count)}
+      on:editend={onEditDragEnd}
+      on:dragend={onEditDragEnd}
       bind:value={params.desired_success_count}
     />
   </div>
