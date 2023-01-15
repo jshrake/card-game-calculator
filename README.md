@@ -2,7 +2,6 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f3c4ec24-2be7-4742-91d7-06aea25b3e7c/deploy-status)](https://app.netlify.com/sites/card-game-calculator/deploys)
 
-
 <div style="text-align: center;">
 
 <https://card-game-calculator.netlify.app/>
