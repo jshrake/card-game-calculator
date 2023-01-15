@@ -19,6 +19,13 @@ Features:
 - [x] Quick to load, minimal bundle size.
 - [x] Works offline.
 - [x] Encodes input parameters into the URL so that you can share the results.
+- [x] Defaults for various popular card games:
+  - [x] Marvel Snap: <https://card-game-calculator.netlify.app/snap>
+  - [x] Magic: The Gathering: <https://card-game-calculator.netlify.app/magic>
+  - [x] Hearthstone: <https://card-game-calculator.netlify.app/hearthstone>
+  - [ ] [Create a new issue](https://github.com/jshrake/card-game-calculator/issues/new?assignees=&labels=&template=add-defaults-for-a-new-game.md&title=) to request the addition of another game
+
+Please [create a new issue](https://github.com/jshrake/card-game-calculator/issues/new/choose) for bugs, feature requests, or feedback.
 
 ## License
 

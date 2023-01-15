@@ -3,12 +3,49 @@
   import Output from "./lib/Output.svelte";
   import type HypergeometricParams from "./lib/HypergeometricParameters";
 
-  let params: HypergeometricParams = {
-    deck_size: 12,
-    deck_success_count: 3,
-    draw_count: 4,
-    desired_success_count: 2,
+  /**
+   * Default hypergeometric parameters for different popular card games.
+   */
+  const defaultParams: Record<string, [string, HypergeometricParams]> = {
+    "/": [
+      "Card Game",
+      {
+        deck_size: 12,
+        deck_success_count: 3,
+        draw_count: 4,
+        desired_success_count: 2,
+      },
+    ],
+    "/hearthstone": [
+      "Hearthstone",
+      {
+        deck_size: 30,
+        deck_success_count: 2,
+        draw_count: 3,
+        desired_success_count: 1,
+      },
+    ],
+    "/snap": [
+      "Marvel Snap",
+      {
+        deck_size: 12,
+        deck_success_count: 2,
+        draw_count: 4,
+        desired_success_count: 1,
+      },
+    ],
+    "/magic": [
+      "Magic The Gathering",
+      {
+        deck_size: 60,
+        deck_success_count: 4,
+        draw_count: 7,
+        desired_success_count: 1,
+      },
+    ],
   };
+  const pathname = window.location.pathname || "/";
+  let [game_title, params] = defaultParams[pathname] || defaultParams["/"];
 
   const HG_N = "N";
   const HG_K = "K";
@@ -67,7 +104,7 @@
 <main>
   <div class="header-container">
     <h1>
-      Card Game Calculator
+      {game_title} Calculator
       <a href="https://github.com/jshrake/card-game-calculator"
         ><img
           class="github-logo"
