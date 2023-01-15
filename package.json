@@ -21,7 +21,8 @@
     "svelte-check": "^2.10.0",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "vite-plugin-pwa": "^0.14.1"
   },
   "dependencies": {
     "@stdlib/stats-base-dists-hypergeometric-cdf": "^0.0.7",
