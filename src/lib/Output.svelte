@@ -22,15 +22,18 @@
       ));
   $: value = `${(100.0 * p).toFixed(2)}%`;
 
-  $: val_pmf = range(0, params.draw_count).map((k) => [
-    k,
-    hypergeometric_pmf(
+  $: val_pmf = range(0, params.draw_count)
+    .map((k) => [
       k,
-      params.deck_size,
-      params.deck_success_count,
-      params.draw_count
-    ) || 0.0,
-  ]);
+      hypergeometric_pmf(
+        k,
+        params.deck_size,
+        params.deck_success_count,
+        params.draw_count
+      ) || 0.0,
+    ])
+    // Filter out near-zero probabilities
+    .filter(([_, p]) => p > 1e-6);
   $: max_pmf = val_pmf.reduce((max, [_, p]) => Math.max(max, p), 0.0);
   $: val_pmf_scale = val_pmf.map(([k, p]) => [k, p, p / max_pmf]);
 
@@ -81,7 +84,7 @@
   <p class="raw-result">{value}</p>
   <table
     class="charts-css column show-labels hide-data show-primary-axis data-spacing-3"
-    style={`font-size: ${label_font_size(params.draw_count)};`}
+    style={`font-size: ${label_font_size(val_pmf_scale.length)};`}
   >
     <caption>Hypergeometric Probability Distribution</caption>
     <thead><tr><th>Successes (k)</th> <th>Probability</th></tr></thead>
