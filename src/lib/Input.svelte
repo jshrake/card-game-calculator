@@ -1,5 +1,6 @@
 <script lang="ts">
   import type HypergeometricParameters from "./HypergeometricParameters";
+  import NumberSpinner from "svelte-number-spinner";
 
   /** Input parameters for the hypergeometric distribution calculation*/
   export let params: HypergeometricParameters;
@@ -46,7 +47,8 @@ Input Component
   <!-- deck_size -->
   <div class="input-label">
     <label for="deck_size_input"> Deck Size (N) </label>
-    <input
+    <NumberSpinner
+      class="number-spinner"
       id="deck_size_input"
       tabindex="0"
       type="number"
@@ -60,7 +62,8 @@ Input Component
   <!-- deck_success_count -->
   <div class="input-label">
     <label for="deck_success_count_input"> Deck Success Count (K) </label>
-    <input
+    <NumberSpinner
+      class="number-spinner"
       id="deck_success_count_input"
       type="number"
       inputmode="numeric"
@@ -74,7 +77,8 @@ Input Component
   <!-- draw_count -->
   <div class="input-label">
     <label for="draw_count_input"> Draw Count (n) </label>
-    <input
+    <NumberSpinner
+      class="number-spinner"
       id="draw_count_input"
       type="number"
       inputmode="numeric"
@@ -88,8 +92,9 @@ Input Component
   <!-- desired_success_count -->
   <div class="input-label">
     <label for="desired_success_count_input"> Desired Success Count (k) </label>
-    <input
+    <NumberSpinner
       id="desired_success_count_input"
+      class="number-spinner"
       type="number"
       inputmode="numeric"
       name="desired_success_count"
@@ -111,9 +116,25 @@ Input Component
     text-align: left;
     font-size: 1em;
   }
-  .input-label input {
+
+  :global(.number-spinner) {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: right;
+    width: 100%;
     font-size: 1.2em;
     font-weight: bold;
-    width: 100%;
+  }
+  :global(.number-spinner):focus {
+    cursor: default;
+  }
+  :global(.number-spinner) {
+    cursor: default;
+  }
+  :global(.number-spinner) {
+    cursor: default;
+  }
+  :global(.number-spinner) {
+    cursor: default;
   }
 </style>
