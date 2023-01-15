@@ -50,94 +50,98 @@ Input Component
 <div class="input-container">
   <!-- deck_size -->
   <div class="input-label">
-    <label for="deck_size_input"> Deck Size (N) </label>
-    <NumberSpinner
-      class="number-spinner"
-      id="deck_size_input"
-      tabindex="0"
-      type="number"
-      inputmode="numeric"
-      name="deck_size"
-      speed={spinnerSpeed}
-      min="0"
-      on:editend={onEditDragEnd}
-      on:dragend={onEditDragEnd}
-      bind:value={params.deck_size}
-    />
+    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <label>
+      <span>Deck Size (N)</span>
+      <NumberSpinner
+        class="number-spinner"
+        tabindex="0"
+        type="number"
+        inputmode="numeric"
+        speed={spinnerSpeed}
+        min="0"
+        on:editend={onEditDragEnd}
+        on:dragend={onEditDragEnd}
+        bind:value={params.deck_size}
+      />
+    </label>
   </div>
 
   <!-- deck_success_count -->
   <div class="input-label">
-    <label for="deck_success_count_input"> Deck Success Count (K) </label>
-    <NumberSpinner
-      class="number-spinner"
-      id="deck_success_count_input"
-      type="number"
-      inputmode="numeric"
-      name="deck_success_count"
-      speed={spinnerSpeed}
-      min="0"
-      max={params.deck_size}
-      on:editend={onEditDragEnd}
-      on:dragend={onEditDragEnd}
-      bind:value={params.deck_success_count}
-    />
+    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <label>
+      <span>Deck Success Count (K)</span>
+      <NumberSpinner
+        class="number-spinner"
+        type="number"
+        inputmode="numeric"
+        speed={spinnerSpeed}
+        min="0"
+        max={params.deck_size}
+        on:editend={onEditDragEnd}
+        on:dragend={onEditDragEnd}
+        bind:value={params.deck_success_count}
+      />
+    </label>
   </div>
 
   <!-- draw_count -->
   <div class="input-label">
-    <label for="draw_count_input"> Draw Count (n) </label>
-    <NumberSpinner
-      class="number-spinner"
-      id="draw_count_input"
-      type="number"
-      inputmode="numeric"
-      name="draw_count"
-      speed={spinnerSpeed}
-      min="0"
-      max={params.deck_size}
-      on:editend={onEditDragEnd}
-      on:dragend={onEditDragEnd}
-      bind:value={params.draw_count}
-    />
+    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <label>
+      <span>Draw Count (n)</span>
+      <NumberSpinner
+        class="number-spinner"
+        type="number"
+        inputmode="numeric"
+        speed={spinnerSpeed}
+        min="0"
+        max={params.deck_size}
+        on:editend={onEditDragEnd}
+        on:dragend={onEditDragEnd}
+        bind:value={params.draw_count}
+      />
+    </label>
   </div>
 
   <!-- desired_success_count -->
   <div class="input-label">
-    <label for="desired_success_count_input"> Desired Success Count (k) </label>
-    <NumberSpinner
-      id="desired_success_count_input"
-      class="number-spinner"
-      type="number"
-      inputmode="numeric"
-      name="desired_success_count"
-      speed={spinnerSpeed}
-      min="0"
-      max={Math.min(params.deck_success_count, params.draw_count)}
-      on:editend={onEditDragEnd}
-      on:dragend={onEditDragEnd}
-      bind:value={params.desired_success_count}
-    />
+    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <label>
+      <span>Desired Success Count (k)</span>
+      <NumberSpinner
+        class="number-spinner"
+        type="number"
+        inputmode="numeric"
+        speed={spinnerSpeed}
+        min="0"
+        max={Math.min(params.deck_success_count, params.draw_count)}
+        on:editend={onEditDragEnd}
+        on:dragend={onEditDragEnd}
+        bind:value={params.desired_success_count}
+      />
+    </label>
   </div>
 </div>
 
 <style>
   .input-label {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
+    display: inline-block;
   }
   .input-label label {
+    display: inline;
+    float: left;
     text-align: left;
     font-size: 1em;
   }
 
   :global(.number-spinner) {
-    display: inline-block;
+    display: inline;
+    float: right;
     box-sizing: border-box;
     text-align: right;
-    width: 100%;
+    width: 40%;
     font-size: 1.2em;
     font-weight: bold;
   }

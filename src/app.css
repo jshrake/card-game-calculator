@@ -35,6 +35,9 @@ body {
 h1 {
   font-size: 1.5em;
 }
+h2 {
+  font-size: 1.0em;
+}
 
 #app {
   box-sizing: border-box;

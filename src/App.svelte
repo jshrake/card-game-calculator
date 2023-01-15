@@ -76,11 +76,11 @@
         />
       </a>
     </h1>
-    <h4>
+    <h2>
       A <a href="https://en.wikipedia.org/wiki/Hypergeometric_distribution"
         >hypergeometric distribution</a
       > calculator
-    </h4>
+    </h2>
   </div>
   <div class="card">
     <div class="input-container">
