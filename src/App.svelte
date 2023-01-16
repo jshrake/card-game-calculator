@@ -35,7 +35,7 @@
       },
     ],
     "/magic": [
-      "Magic The Gathering",
+      "Magic: The Gathering",
       {
         deck_size: 60,
         deck_success_count: 4,
