@@ -4,6 +4,7 @@
 
   import githubLogo from "./assets/github.svg";
   import mastodonLogo from "./assets/mastodon.svg";
+  import kofiLogo from "./assets/kofi.svg";
 
   /**
    * Default hypergeometric parameters for different popular card games.
@@ -133,6 +134,9 @@
     </a>
     <a href="https://mastodon.social/@jshrake" target="_blank" rel="noreferrer">
       <img class="svg-logo" alt="Mastodon Logo" src={mastodonLogo} />
+    </a>
+    <a href="https://ko-fi.com/jshrake" target="_blank" rel="noreferrer">
+      <img class="svg-logo" alt="Ko-fi Logo" src={kofiLogo} />
     </a>
   </div>
 </main>
