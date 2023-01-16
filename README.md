@@ -12,7 +12,7 @@
 
 </div>
 
-A hypergeometric calculator for card games, built with [svelte](https://svelte.dev/), [typescript](https://www.typescriptlang.org/), and [chart.css](https://chartscss.org/).
+A hypergeometric calculator for card games, built with [svelte](https://svelte.dev/), [typescript](https://www.typescriptlang.org/), and [charts.css](https://chartscss.org/).
 
 Features:
 
