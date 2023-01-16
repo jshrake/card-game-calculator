@@ -2,6 +2,9 @@
   import type HypergeometricParams from "./lib/HypergeometricParameters";
   import CardGameCalculator from "./lib/Calculator.svelte";
 
+  import githubLogo from "./assets/github.svg";
+  import mastodonLogo from "./assets/mastodon.svg";
+
   /**
    * Default hypergeometric parameters for different popular card games.
    */
@@ -101,44 +104,69 @@
 </script>
 
 <main>
-  <div class="header-container">
+  <div class="header">
     <h1>
       {game_title} Calculator
-      <a href="https://github.com/jshrake/card-game-calculator"
-        ><img
-          class="github-logo"
-          alt="Github Logo, Link to Source Code"
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAD4klEQVRoQ+2YjVEUQRCFuQjUCDwiECJwiUCJwCMCJQLPCMQIPCIAIxAiECPwiECN4HzfVi+1zPb87N6cFFV01dTB7kzPez39Nzvbe+Qye+T4954IPPQJVjuBzWZzIDKvNRqNuQb/9+VG//zRuGLMZrPrGuS3IiDQzwXivcbCQI/BtNbkS40vIsPfk2QSAQP+UTt+mLTrcNFKj05FhBMaJaMJCPxb7fBVA+vXFMBDAjLFMoqAwH+uaPUYyJVInJQyKCYg8Fh9Uap4y3lXWn9c4lJFBP4z+I47meooZ4gsAYFfSgkB+xCSdackAYFvhPq7g/xczwg23uNWLyey+2t6SKckB1JyKCepwI4SsFT5Q9rmjtIjKcVPW9FcSJxpPLNHP/UbpkSy1it7D/CldLCm08E+v5y90LMfi4cUgaUWuq4jZYN1RvigT8wBA9lGz288QHq38dbo2bnmY6SBuAQMDNZwc71HILLxqMcJAujhFNahwhgBKiw5PyYvSlLcKPSanCFAyzGo/DEC+H7YjPXx3IuBsUAjrsV+7BuTtQjsZ09AVphrkhdM3dpvUkTGqC7am6D2MlG318BwXjAuNJuqGxPXF2uwsdhbS1eXzUK1n2S8Zf+hRyBlhZ1ZvwMlEiv9/S5ikMH+HoErLeZi4snAAjUs39dh3e5FRC/p9zB3AikCNFhUzZ1Jovq3e4Yp3DsBAngeQZgs6zVY1SDA3bUr+dkgqgF6hAsVnUDKhdxiUpNEpvu9lQvd846xQTwIoprg0SUCxNibiN5rEWhyQZwrJruuA78TRilKo1TZWBpDd7Qz3PY0Ci5PXPrvWvA2K4WbWjVMWYEl1dOpfRjj8pT62nEoAiSZO4k1c6lAZjGXDFJqlZpgqZNTT4EfBLB7AhZIC/32+6FbAx2m15WeU53XU9zHGkcuTeyXk4H7RAkYCazcNVWXAnls7oXVw1aDY+XU+CXQwutkC87Wk2FonRv7zQHnPVfQuac3daUMLzWA6z5zANYrdtyFm9RlRyRYG+u1YmSiPVjuq0RYldsMZAEHkLDtdY+5jyrTrHkEcF/u2u6p5gh4t6S2DhiJpbkCyiHEl4Z1zicyV8dw+ZF0otuVkg9bC63sB3QbDzmQqfcjCGTb9ywBgDhXvTOROJ1KopBAUcEsIhAhgatQFbvCQpbgi11WCggUgWejYgJGInSne2BFoEhfhkA2EfQ3Ldqwv8CCd6VngzS6JQGyzSIVsN7RjibQKRER6sRS4y6VTiRAkSKm0DVaJhPoEcGtGNyWmhIEVszoe4ghspqb40t0bU2gZJNdznkisEvrluh+OoESK+1yzj962JFAHBp1LQAAAABJRU5ErkJggg=="
-        />
-      </a>
     </h1>
     <h2>
-      A <a href="https://en.wikipedia.org/wiki/Hypergeometric_distribution"
+      Calculate the probability to draw cards using the <a
+        href="https://en.wikipedia.org/wiki/Hypergeometric_distribution"
         >hypergeometric distribution</a
-      > calculator
+      >
     </h2>
   </div>
-  <CardGameCalculator
-    bind:params
-    onParamsChange={(params) => {
-      set_url_params_from_hyper_params(params);
-    }}
-  />
+  <div class="calculator-container">
+    <CardGameCalculator
+      bind:params
+      onParamsChange={(params) => {
+        set_url_params_from_hyper_params(params);
+      }}
+    />
+  </div>
+  <div class="footer">
+    <a
+      href="https://github.com/jshrake/card-game-calculator"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <img class="svg-logo" alt="GitHub Logo" src={githubLogo} />
+    </a>
+    <a href="https://mastodon.social/@jshrake" target="_blank" rel="noreferrer">
+      <img class="svg-logo" alt="Mastodon Logo" src={mastodonLogo} />
+    </a>
+  </div>
 </main>
 
 <style>
-  .header-container {
-    line-height: 0.2em;
-    padding-bottom: 0.5em;
+  .header {
+    line-height: 1em;
+    padding-bottom: 1em;
   }
 
-  .github-logo {
-    width: 1em;
-    text-align: end;
+  .header h1 {
+    font-size: 1.75em;
+    font-weight: bolder;
+    margin: 0;
   }
 
-  @media (prefers-color-scheme: light) {
-    .github-logo {
+  .header h2 {
+    font-size: 1em;
+    font-weight: normal;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+  }
+
+  .svg-logo {
+    width: 3em;
+    padding: 1em;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .svg-logo {
       filter: invert(100%);
     }
   }
