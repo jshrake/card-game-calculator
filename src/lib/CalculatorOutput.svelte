@@ -83,13 +83,11 @@
   }
   .answer-context {
     font-size: 1.1em;
-    text-align: center;
   }
   .answer-as-pct {
     font-size: 4em;
     font-weight: bold;
     line-height: 0.1em;
     color: orange;
-    margin: 0.75em;
   }
 </style>
