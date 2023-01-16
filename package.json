@@ -7,22 +7,28 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run src",
+    "test:watch": "vitest src"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/svelte": "^3.2.2",
     "@tsconfig/svelte": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.31.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "eslint-plugin-tsdoc": "^0.2.17",
+    "jsdom": "^21.0.0",
     "svelte": "^3.54.0",
     "svelte-check": "^2.10.0",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3",
-    "vite": "^4.0.0",
-    "vite-plugin-pwa": "^0.14.1"
+    "vite": "^4.0.4",
+    "vite-plugin-pwa": "^0.14.1",
+    "vitest": "^0.27.1"
   },
   "dependencies": {
     "@stdlib/stats-base-dists-hypergeometric-pmf": "^0.0.7",
