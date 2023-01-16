@@ -7,9 +7,9 @@
 
 <div style="text-align: center;">
 
-<https://card-game-calculator.netlify.app/>
+<https://cardgamecalculator.com>
 
-[![demo](./demo.gif)](https://card-game-calculator.netlify.app/)
+[![demo](./demo.gif)](https://cardgamecalculator.com)
 
 </div>
 
