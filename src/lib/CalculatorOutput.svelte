@@ -2,7 +2,7 @@
   import hypergeometric_pmf from "@stdlib/stats-base-dists-hypergeometric-pmf";
 
   import type HypergeometricParameters from "./HypergeometricParameters";
-  import OutputChart from "./OutputChart.svelte";
+  import OutputChart from "./CalculatorOutputChart.svelte";
 
   /** Input parameters for the hypergeometric distribution calculation*/
   export let params: HypergeometricParameters;
@@ -60,7 +60,7 @@
 -->
 <div class="output-container">
   <!-- prettier-ignore -->
-  <p class="answer-context">
+  <p data-testid="answer-explain" class="answer-context">
     Probability to draw at least <span class="emphasize">{params.desired_success_count}</span>
     {pluralize(params.desired_success_count, "success", "es")} in <span class="emphasize">{params.draw_count}</span> {pluralize(params.draw_count, "draw", "s")} 
     from a deck of <span class="emphasize">{params.deck_size}</span>
@@ -68,7 +68,7 @@
     {pluralize(params.deck_success_count, "success", "es")}
   </p>
 
-  <p class="answer-as-pct">{answer_as_pct}</p>
+  <p data-testid="answer-result" class="answer-as-pct">{answer_as_pct}</p>
 
   <OutputChart
     {value_pmf_list}

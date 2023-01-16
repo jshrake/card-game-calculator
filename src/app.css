@@ -28,7 +28,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 375px;
+  min-width: 360px;
   height: 100%;
   min-height: 90vh;
 }
@@ -43,7 +43,7 @@ h2 {
 
 #app {
   box-sizing: border-box;
-  max-width: 375px;
+  max-width: 360px;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;

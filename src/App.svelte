@@ -1,7 +1,6 @@
 <script lang="ts">
-  import Input from "./lib/Input.svelte";
-  import Output from "./lib/Output.svelte";
   import type HypergeometricParams from "./lib/HypergeometricParameters";
+  import CardGameCalculator from "./lib/Calculator.svelte";
 
   /**
    * Default hypergeometric parameters for different popular card games.
@@ -119,39 +118,20 @@
       > calculator
     </h2>
   </div>
-  <div class="card">
-    <div class="input-container">
-      <Input
-        bind:params
-        onEditDragEnd={(_) => {
-          // Keep the URL parameters updated whenever the hypergeometric parameters change
-          set_url_params_from_hyper_params(params);
-        }}
-      />
-    </div>
-    <div class="output-container">
-      <Output {params} />
-    </div>
-  </div>
+  <CardGameCalculator
+    bind:params
+    onParamsChange={(params) => {
+      set_url_params_from_hyper_params(params);
+    }}
+  />
 </main>
 
 <style>
   .header-container {
     line-height: 0.2em;
+    padding-bottom: 0.5em;
   }
-  .card {
-    padding: 1em;
-    max-width: 320px;
-    width: 320px;
-  }
-  .input-container {
-    max-width: 100%;
-    width: 100%;
-  }
-  .output-container {
-    max-width: 100%;
-    width: 100%;
-  }
+
   .github-logo {
     width: 1em;
     text-align: end;

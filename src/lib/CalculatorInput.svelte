@@ -5,7 +5,7 @@
   /** Input parameters for the hypergeometric distribution calculation*/
   export let params: HypergeometricParameters;
 
-  export let onEditDragEnd = (event: any) => {};
+  export let onEditDragEnd = (_: any) => {};
 
   // Restrict input values to be within the bounds of the other inputs
   $: {

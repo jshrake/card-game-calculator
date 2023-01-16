@@ -30,7 +30,7 @@
   <caption>Hypergeometric Probability Distribution</caption>
   <thead><tr><th>Successes (k)</th> <th>Probability</th></tr></thead>
   <tbody>
-    {#each value_pmf_list as [value, pmf], i}
+    {#each value_pmf_list as [value, pmf] (value)}
       <tr>
         <th scope="row">{value}</th>
         <td
