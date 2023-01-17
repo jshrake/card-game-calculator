@@ -52,9 +52,9 @@
 <style>
   table {
     width: 100%;
-    height: 200px;
     max-width: 100%;
-    max-height: 200px;
+    height: 100px;
+    max-height: 100px;
     overflow-x: hidden;
     overflow-y: hidden;
   }
