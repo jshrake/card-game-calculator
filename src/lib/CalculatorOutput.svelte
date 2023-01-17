@@ -83,11 +83,14 @@
   }
   .answer-context {
     font-size: 1.1em;
+    margin: 0.2em;
   }
   .answer-as-pct {
     font-size: 4em;
     font-weight: bold;
-    line-height: 0.1em;
+    line-height: 1em;
+    margin: 0.2em;
+    padding: 0;
     color: orange;
   }
 </style>
