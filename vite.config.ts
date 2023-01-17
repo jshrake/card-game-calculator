@@ -17,7 +17,7 @@ export default defineConfig({
       ],
       manifest: {
         name: "Card Game Calculator",
-        short_name: "card-game-calculator",
+        short_name: "Card Game Calculator",
         description:
           "Calculate the probability to draw cards using the hypergeometric distribution.",
         icons: [
@@ -38,8 +38,8 @@ export default defineConfig({
             purpose: "any maskable",
           },
         ],
-        theme_color: "#213547",
-        background_color: "#213547",
+        theme_color: "#ffffff",
+        background_color: "#ffffff",
       },
     }),
   ],
