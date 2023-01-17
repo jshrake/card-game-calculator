@@ -30,6 +30,10 @@ Features:
 
 Please [create a new issue](https://github.com/jshrake/card-game-calculator/issues/new/choose) for bugs, feature requests, or feedback.
 
+## Resources
+
+- PWA Setup <https://vite-pwa-org.netlify.app/guide/pwa-minimal-requirements.html>
+
 ## License
 
 This project is licensed under either of
@@ -38,3 +42,5 @@ This project is licensed under either of
 - MIT license ([LICENSE-MIT](/LICENSE-MIT) or <https://opensource.org/licenses/MIT>)
 
 at your option.
+
+The favicon and other image assets within [public](/public/) were purchased from <https://icons8.com/> and cannot be reused without proper attribution. Please see <https://icons8.com/license>.
