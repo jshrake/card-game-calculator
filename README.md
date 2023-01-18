@@ -43,4 +43,7 @@ This project is licensed under either of
 
 at your option.
 
-The favicon and other image assets within [public](/public/) were purchased from <https://icons8.com/> and cannot be reused without proper attribution. Please see <https://icons8.com/license>.
+## Attribution
+
+- The [calculator icon](https://icons8.com/icon/DsMBYmNrgHmm/calculator) was purchased from <https://icons8.com/> and cannot be used without proper attribution. Please see <https://icons8.com/license>.
+- All images in [public](/public) were generated with <https://realfavicongenerator.net/>.
