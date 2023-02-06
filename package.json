@@ -28,7 +28,7 @@
     "typescript": "^4.9.3",
     "vite": "^4.0.4",
     "vite-plugin-pwa": "^0.14.1",
-    "vitest": "^0.28.3"
+    "vitest": "^0.28.4"
   },
   "dependencies": {
     "@stdlib/stats-base-dists-hypergeometric-pmf": "^0.0.7",
